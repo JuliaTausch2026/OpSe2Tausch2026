@@ -17,9 +17,9 @@ public class ConcreteTxtReaderProduct extends ReaderProductTausch {
 		String[] ergebnisZeile = new String[5];
 		int i  = 0;
 		while(i < ergebnisZeile.length) {
-			ergebnisZeile[i] = zeile;
-			zeile = ein.readLine();
-			i++;
+    	ergebnisZeile[i] = zeile;
+    	zeile = ein.readLine();
+    	i++;
 		}
 		return ergebnisZeile;
 	}
