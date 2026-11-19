@@ -24,13 +24,14 @@ public class CafeControl {
      void leseAusDatei(String typ){
     	try {
       		if("csv".equals(typ)){
-      			cafemodel.leseAusDate(typ);
+      			cafemodel.leseCafeAusCsvDatei();
       	  			cafeview.zeigeInformationsfensterAn(
       	  	   			"Das Cafe wurde gelesen!");
       		}
        		else{
-	   			cafeview.zeigeInformationsfensterAn(
-	   				"Noch nicht implementiert!");
+	   			cafemodel.leseCafeAusTxtDatei();
+  	  			cafeview.zeigeInformationsfensterAn(
+      	  	   			"Das Cafe wurde gelesen!");
 	   		}
 		}
 		catch(IOException exc){
@@ -38,6 +39,7 @@ public class CafeControl {
 				"IOException beim Lesen!");
 		}
 		catch(Exception exc){
+			exc.printStackTrace();
 			cafeview.zeigeFehlermeldungsfensterAn(
 				"Unbekannter Fehler beim Lesen!");
 		}
