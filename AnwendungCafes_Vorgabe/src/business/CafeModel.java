@@ -22,31 +22,20 @@ public class CafeModel {
 		this.cafe = cafe;
 	}
 	
-	/*
-	public void leseAusDate(String typ) throws IOException {
-		BufferedReader ein = new BufferedReader(new FileReader("Cafe.csv"));
-			String[] zeile = ein.readLine().split(";");
-			this.cafe = new Cafe(zeile[0], 
-				zeile[1], 
-				zeile[2], 
-				zeile[3], 
-				zeile[4].split("_"));
-				ein.close();
-	}
-	*/
-	
 	public void leseCafeAusCsvDatei() throws IOException {
 		ReaderCreatorTausch c = new ConcreteReaderCreator();
 		ReaderProductTausch p = c.factoryMethod("csv");
-		p.leseAusDatei();
+		String[] daten = p.leseAusDatei();
 		p.schliesseDatei();
+		this.cafe = new Cafe(daten[0], daten[1], daten[2], daten[3], daten[4].split("_"));
 	}
 	
 	public void leseCafeAusTxtDatei() throws IOException {
 		ReaderCreatorTausch c = new ConcreteReaderCreator();
 		ReaderProductTausch p = c.factoryMethod("txt");
-		p.leseAusDatei();
+		String[] daten = p.leseAusDatei();
 		p.schliesseDatei();
+		this.cafe = new Cafe(daten[0], daten[1], daten[2], daten[3], daten[4].split("_"));
 	}
 	
 	public void schreibeCafesInModel() throws IOException {
