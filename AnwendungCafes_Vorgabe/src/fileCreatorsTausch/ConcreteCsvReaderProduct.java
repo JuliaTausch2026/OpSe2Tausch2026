@@ -19,12 +19,12 @@ public class ConcreteCsvReaderProduct extends ReaderProductTausch {
 	@Override
 	public String[] leseAusDatei() throws IOException {
 		String[] zeile = ein.readLine().split(";");
-		String[] arr = new String[4];
+		String[] arr = new String[5];
 		arr[0] = zeile[0];
 		arr[1] = zeile[1];
 		arr[2] = zeile[2];
 		arr[3] = zeile[3];
-		
+		arr[4] = zeile[4];
 		return arr;
 	}
 
